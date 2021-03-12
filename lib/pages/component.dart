@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/component/browsing_card.dart';
 import 'package:food_delivery/widgets/component/food_card.dart';
 import 'package:food_delivery/widgets/component/home_card.dart';
+import 'package:food_delivery/widgets/component/voucher.dart';
 
 class Component extends StatelessWidget {
   @override
@@ -34,7 +35,9 @@ class Component extends StatelessWidget {
           isTwice: false,
           isOngoing: false,
           isTimeSpaceRating: true,
-        )
+        ),
+        SizedBox(height: 20),
+        Voucher(),
       ],
     );
   }
