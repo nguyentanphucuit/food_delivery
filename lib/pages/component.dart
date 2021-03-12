@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/component/browsing_card.dart';
+import 'package:food_delivery/widgets/component/food_card.dart';
 import 'package:food_delivery/widgets/component/home_card.dart';
 
 class Component extends StatelessWidget {
@@ -26,6 +27,14 @@ class Component extends StatelessWidget {
         BrowsingCard(
           isDiscount: true,
         ),
+        FoodCard(
+          onlyMoney: false,
+          isColorPrimary: false,
+          isRateReOrder: false,
+          isTwice: false,
+          isOngoing: false,
+          isTimeSpaceRating: true,
+        )
       ],
     );
   }
