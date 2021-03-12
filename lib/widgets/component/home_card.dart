@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
+import 'package:food_delivery/widgets/component/time_space_rating.dart';
 
 class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       // width: 241,
-      height: 188,
+      height: 200,
       child: ListView.builder(
         padding: EdgeInsets.only(right: 50.0),
         scrollDirection: Axis.horizontal,
@@ -40,8 +41,7 @@ class HomeCard extends StatelessWidget {
                               _distantHeight(3),
                               Text(
                                 'Creamos - Chapel Ln',
-                                style: StylesText.headline16
-                                    .copyWith(fontWeight: FontWeight.bold),
+                                style: StylesText.headline16,
                               ),
                               _distantHeight(2),
                               Text(
@@ -50,46 +50,7 @@ class HomeCard extends StatelessWidget {
                                     .copyWith(color: AppColors.neutral3),
                               ),
                               _distantHeight(1),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Image.asset(
-                                    'assets/images/icons/1.0x/mdi_access_time.png',
-                                    width: 14,
-                                    height: 14,
-                                  ),
-                                  _distantWidth(2),
-                                  Text(
-                                    '15 mins',
-                                    style: StylesText.caption,
-                                  ),
-                                  _distantWidth(2),
-                                  Icon(
-                                    Icons.circle,
-                                    size: 6,
-                                  ),
-                                  _distantWidth(2),
-                                  Text(
-                                    '3 km',
-                                    style: StylesText.caption,
-                                  ),
-                                  _distantWidth(4),
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/icons/1.0x/Star.png',
-                                        width: 14,
-                                        height: 14,
-                                      ),
-                                      _distantWidth(2),
-                                      Text(
-                                        '5.0',
-                                        style: StylesText.caption,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              )
+                              TimeSpaceRating(),
                             ],
                           ),
                         ),

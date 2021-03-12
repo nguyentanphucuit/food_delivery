@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/widgets/component/browsing_card.dart';
 import 'package:food_delivery/widgets/component/home_card.dart';
 
 class Component extends StatelessWidget {
@@ -22,6 +23,9 @@ class Component extends StatelessWidget {
     return Column(
       children: [
         HomeCard(),
+        BrowsingCard(
+          isDiscount: true,
+        ),
       ],
     );
   }
