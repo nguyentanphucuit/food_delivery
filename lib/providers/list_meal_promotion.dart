@@ -35,4 +35,23 @@ class ListMealPromotion with ChangeNotifier {
   List<MealPromotion> get mealPromotion {
     return [..._listMealPromotion];
   }
+
+  void addMealPromotion(MealPromotion mealPromotion) {
+    final newMealPromotion = MealPromotion(
+      title: mealPromotion.title,
+      sub: mealPromotion.sub,
+      time: mealPromotion.time,
+      distant: mealPromotion.distant,
+      rating: mealPromotion.rating,
+      discount: mealPromotion.discount,
+      image: mealPromotion.image,
+    );
+    _listMealPromotion.add(newMealPromotion);
+    notifyListeners();
+  }
+
+  void removeMealPromotion() {
+    _listMealPromotion.clear();
+    notifyListeners();
+  }
 }

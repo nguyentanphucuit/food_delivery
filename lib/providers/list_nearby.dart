@@ -32,4 +32,22 @@ class ListNearby with ChangeNotifier {
   List<Nearby> get nearby {
     return [..._listNearby];
   }
+
+  void addNearby(Nearby nearby) {
+    final newNearby = Nearby(
+      title: nearby.title,
+      sub: nearby.sub,
+      time: nearby.time,
+      distant: nearby.distant,
+      rating: nearby.rating,
+      image: nearby.image,
+    );
+    _listNearby.add(newNearby);
+    notifyListeners();
+  }
+
+  void removeNearby() {
+    _listNearby.clear();
+    notifyListeners();
+  }
 }

@@ -9,6 +9,7 @@ class ListPopularPromotion with ChangeNotifier {
       time: 'time',
       distant: 'distant',
       rating: 'rating',
+      discount: 'discount',
       image: 'image',
     ),
     PopularPromotion(
@@ -17,6 +18,7 @@ class ListPopularPromotion with ChangeNotifier {
       time: 'time1',
       distant: 'distant1',
       rating: 'rating1',
+      discount: 'discount1',
       image: 'image1',
     ),
     PopularPromotion(
@@ -25,11 +27,30 @@ class ListPopularPromotion with ChangeNotifier {
       time: 'time2',
       distant: 'distant2',
       rating: 'rating2',
+      discount: 'discount2',
       image: 'image2',
     ),
   ];
 
   List<PopularPromotion> get popularPromotion {
     return [..._listPopularPromotion];
+  }
+  void addPopularPromotion(PopularPromotion popularPromotion) {
+    final newPopularPromotion = PopularPromotion(
+      title: popularPromotion.title,
+      sub: popularPromotion.sub,
+      time: popularPromotion.time,
+      distant: popularPromotion.distant,
+      rating: popularPromotion.rating,
+      discount: popularPromotion.discount,
+      image: popularPromotion.image,
+    );
+    _listPopularPromotion.add(newPopularPromotion);
+    notifyListeners();
+  }
+
+  void removePopularPromotion() {
+    _listPopularPromotion.clear();
+    notifyListeners();
   }
 }

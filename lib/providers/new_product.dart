@@ -5,7 +5,7 @@ class NewProduct {
   final String kCal;
   final String price;
   final String discount;
-  final String rating;
+  final String sub;
   final String image;
 
   NewProduct({
@@ -13,7 +13,7 @@ class NewProduct {
     @required this.kCal,
     @required this.price,
     @required this.discount,
-    @required this.rating,
+    @required this.sub,
     @required this.image,
   });
 }

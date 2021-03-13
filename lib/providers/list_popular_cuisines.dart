@@ -20,4 +20,18 @@ class ListPopularCuisines with ChangeNotifier {
   List<PopularCuisines> get popularCuisines {
     return [..._listPopularCuisines];
   }
+
+  void addPopularCuisines(PopularCuisines popularCuisines) {
+    final newPopularCuisines = PopularCuisines(
+      title: popularCuisines.title,
+      image: popularCuisines.image,
+    );
+    _listPopularCuisines.add(newPopularCuisines);
+    notifyListeners();
+  }
+
+  void removePopularCuisines() {
+    _listPopularCuisines.clear();
+    notifyListeners();
+  }
 }

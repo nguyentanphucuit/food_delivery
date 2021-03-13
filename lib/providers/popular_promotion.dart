@@ -6,6 +6,7 @@ class PopularPromotion {
   final String time;
   final String distant;
   final String rating;
+  final String discount;
   final String image;
 
   PopularPromotion({
@@ -14,6 +15,7 @@ class PopularPromotion {
     @required this.time,
     @required this.distant,
     @required this.rating,
+    @required this.discount,
     @required this.image,
   });
 }

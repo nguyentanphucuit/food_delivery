@@ -32,4 +32,22 @@ class ListNearbyPopular with ChangeNotifier {
   List<NearbyPopular> get nearbyPopular {
     return [..._listNearbyPopular];
   }
+
+  void addNearbyPopular(NearbyPopular nearbyPopular) {
+    final newNearbyPopular = NearbyPopular(
+      title: nearbyPopular.title,
+      sub: nearbyPopular.sub,
+      time: nearbyPopular.time,
+      distant: nearbyPopular.distant,
+      rating: nearbyPopular.rating,
+      image: nearbyPopular.image,
+    );
+    _listNearbyPopular.add(newNearbyPopular);
+    notifyListeners();
+  }
+
+  void removeNearbyPopular() {
+    _listNearbyPopular.clear();
+    notifyListeners();
+  }
 }

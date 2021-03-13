@@ -8,7 +8,7 @@ class ListNewProduct with ChangeNotifier {
       kCal: 'kCal',
       price: 'price',
       discount: 'discount',
-      rating: 'rating',
+      sub: 'sub',
       image: 'image',
     ),
     NewProduct(
@@ -16,7 +16,7 @@ class ListNewProduct with ChangeNotifier {
       kCal: 'kCal1',
       price: 'price1',
       discount: 'discount1',
-      rating: 'rating1',
+      sub: 'sub1',
       image: 'image1',
     ),
     NewProduct(
@@ -24,12 +24,29 @@ class ListNewProduct with ChangeNotifier {
       kCal: 'kCal2',
       price: 'price2',
       discount: 'discount2',
-      rating: 'rating2',
+      sub: 'sub2',
       image: 'image2',
     ),
   ];
 
   List<NewProduct> get newProduct {
     return [..._listNewProduct];
+  }
+  void addNewProduct(NewProduct newProduct) {
+    final newNewProduct = NewProduct(
+      title: newProduct.title,
+      sub: newProduct.sub,
+      kCal: newProduct.kCal,
+      price: newProduct.price,
+      discount: newProduct.discount,
+      image: newProduct.image,
+    );
+    _listNewProduct.add(newNewProduct);
+    notifyListeners();
+  }
+
+  void removeNewProduct() {
+    _listNewProduct.clear();
+    notifyListeners();
   }
 }

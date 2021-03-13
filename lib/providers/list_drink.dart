@@ -32,8 +32,26 @@ class ListDrink with ChangeNotifier {
       image: 'image2',
     ),
   ];
-
   List<Drink> get drink {
     return [..._listDrink];
+  }
+
+  void addDrink(Drink drink) {
+    final newDrink = Drink(
+      title: drink.title,
+      sub: drink.sub,
+      time: drink.time,
+      distant: drink.distant,
+      rating: drink.rating,
+      price: drink.price,
+      image: drink.image,
+    );
+    _listDrink.add(newDrink);
+    notifyListeners();
+  }
+
+  void removeDrink() {
+    _listDrink.clear();
+    notifyListeners();
   }
 }

@@ -32,4 +32,22 @@ class ListOtherMeal with ChangeNotifier {
   List<OtherMeal> get otherMeal {
     return [..._listOtherMeal];
   }
+
+  void addOtherMeal(OtherMeal otherMeal) {
+    final newOtherMeal = OtherMeal(
+      title: otherMeal.title,
+      sub: otherMeal.sub,
+      time: otherMeal.time,
+      distant: otherMeal.distant,
+      rating: otherMeal.rating,
+      image: otherMeal.image,
+    );
+    _listOtherMeal.add(newOtherMeal);
+    notifyListeners();
+  }
+
+  void removeOtherMeal() {
+    _listOtherMeal.clear();
+    notifyListeners();
+  }
 }

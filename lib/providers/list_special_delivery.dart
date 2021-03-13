@@ -8,7 +8,7 @@ class ListSpecialDelivery with ChangeNotifier {
       kCal: 'kCal',
       price: 'price',
       discount: 'discount',
-      rating: 'rating',
+      sub: 'sub',
       image: 'image',
     ),
     SpecialDelivery(
@@ -16,7 +16,7 @@ class ListSpecialDelivery with ChangeNotifier {
       kCal: 'kCal1',
       price: 'price1',
       discount: 'discount1',
-      rating: 'rating1',
+      sub: 'sub1',
       image: 'image1',
     ),
     SpecialDelivery(
@@ -24,12 +24,30 @@ class ListSpecialDelivery with ChangeNotifier {
       kCal: 'kCal2',
       price: 'price2',
       discount: 'discount2',
-      rating: 'rating2',
+      sub: 'sub2',
       image: 'image2',
     ),
   ];
 
   List<SpecialDelivery> get specialDelivery {
     return [..._listSpecialDelivery];
+  }
+
+  void addSpecialDelivery(SpecialDelivery specialDelivery) {
+    final newSpecialDelivery = SpecialDelivery(
+      title: specialDelivery.title,
+      sub: specialDelivery.sub,
+      kCal: specialDelivery.kCal,
+      price: specialDelivery.price,
+      discount: specialDelivery.discount,
+      image: specialDelivery.image,
+    );
+    _listSpecialDelivery.add(newSpecialDelivery);
+    notifyListeners();
+  }
+
+  void removeSpecialDelivery() {
+    _listSpecialDelivery.clear();
+    notifyListeners();
   }
 }

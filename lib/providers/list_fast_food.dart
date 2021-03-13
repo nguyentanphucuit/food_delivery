@@ -36,4 +36,23 @@ class ListFastFood with ChangeNotifier {
   List<FastFood> get fastFood {
     return [..._listFastFood];
   }
+
+  void addFastFood(FastFood fastFood) {
+    final newFastFood = FastFood(
+      title: fastFood.title,
+      sub: fastFood.sub,
+      time: fastFood.time,
+      distant: fastFood.distant,
+      rating: fastFood.rating,
+      timeRemain: fastFood.timeRemain,
+      image: fastFood.image,
+    );
+    _listFastFood.add(newFastFood);
+    notifyListeners();
+  }
+
+  void removeFastFood() {
+    _listFastFood.clear();
+    notifyListeners();
+  }
 }

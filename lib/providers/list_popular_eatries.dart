@@ -32,4 +32,22 @@ class ListPopularEatries with ChangeNotifier {
   List<PopularEatries> get popularEatries {
     return [..._listPopularEatries];
   }
+
+  void addPopularEatries(PopularEatries popularEatries) {
+    final newPopularEatries = PopularEatries(
+      title: popularEatries.title,
+      sub: popularEatries.sub,
+      time: popularEatries.time,
+      distant: popularEatries.distant,
+      rating: popularEatries.rating,
+      image: popularEatries.image,
+    );
+    _listPopularEatries.add(newPopularEatries);
+    notifyListeners();
+  }
+
+  void removePopularEatries() {
+    _listPopularEatries.clear();
+    notifyListeners();
+  }
 }

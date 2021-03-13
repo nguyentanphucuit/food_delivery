@@ -32,4 +32,22 @@ class ListOtherPopular with ChangeNotifier {
   List<OtherPopular> get otherPopular {
     return [..._listOtherPopular];
   }
+
+  void addOtherPopular(OtherPopular otherPopular) {
+    final newOtherPopular = OtherPopular(
+      title: otherPopular.title,
+      sub: otherPopular.sub,
+      time: otherPopular.time,
+      distant: otherPopular.distant,
+      rating: otherPopular.rating,
+      image: otherPopular.image,
+    );
+    _listOtherPopular.add(newOtherPopular);
+    notifyListeners();
+  }
+
+  void removeOtherPopular() {
+    _listOtherPopular.clear();
+    notifyListeners();
+  }
 }

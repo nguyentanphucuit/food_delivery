@@ -32,4 +32,22 @@ class ListHotDeals with ChangeNotifier {
   List<HotDeals> get hotDeals {
     return [..._listHotDeals];
   }
+
+  void addHotDeals(HotDeals hotDeals) {
+    final newHotDeals = HotDeals(
+      title: hotDeals.title,
+      sub: hotDeals.sub,
+      kCal: hotDeals.kCal,
+      price: hotDeals.price,
+      discount: hotDeals.discount,
+      image: hotDeals.image,
+    );
+    _listHotDeals.add(newHotDeals);
+    notifyListeners();
+  }
+
+  void removeHotDeals() {
+    _listHotDeals.clear();
+    notifyListeners();
+  }
 }
