@@ -91,7 +91,6 @@ class Voucher extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // SizedBox(width: 70),
                     Container(
                       padding: EdgeInsets.only(left: _width * 0.19),
                       child: Column(
