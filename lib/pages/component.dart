@@ -31,7 +31,7 @@ class Component extends StatelessWidget {
         FoodCard(
           onlyMoney: false,
           isColorPrimary: false,
-          isRateReOrder: false,
+          isRateReOrder: true,
           isTwice: false,
           isOngoing: false,
           isTimeSpaceRating: true,

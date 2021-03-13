@@ -9,6 +9,9 @@ class BrowsingCard extends StatelessWidget {
   const BrowsingCard({@required this.isDiscount});
   @override
   Widget build(BuildContext context) {
+    final _sizeImage = 74.0;
+    final _paddingTop = 16.0;
+    final _paddingRight = 24.0;
     return Stack(
       children: [
         Column(
@@ -27,18 +30,19 @@ class BrowsingCard extends StatelessWidget {
                 ],
               ),
               // color: Colors.red,
-              margin: EdgeInsets.only(left: 24, top: 16, bottom: 0, right: 24),
-              padding:
-                  EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
-              // height: 74,
+              margin: EdgeInsets.only(
+                  left: _paddingRight, top: _paddingTop, bottom: 0, right: 24),
+              padding: EdgeInsets.only(
+                  left: 16, right: 16, top: _paddingTop, bottom: 16),
+              // height: _sizeImage,
               child: Row(
                 children: [
                   Expanded(
                     flex: 1,
                     child: Image.asset(
                       'assets/images/1.0x/shrimp.png',
-                      width: 74,
-                      height: 74,
+                      width: _sizeImage,
+                      height: _sizeImage,
                     ),
                   ),
                   SizedBox(width: 16),
@@ -69,7 +73,7 @@ class BrowsingCard extends StatelessWidget {
             ),
           ],
         ),
-        isDiscount ? _discount() : SizedBox(),
+        isDiscount ? _discount(_paddingTop, _paddingRight) : SizedBox(),
       ],
     );
   }
@@ -86,10 +90,10 @@ class BrowsingCard extends StatelessWidget {
     );
   }
 
-  _discount() {
+  _discount(_paddingTop, _paddingRight) {
     return Positioned(
-      top: 16,
-      left: 24,
+      top: _paddingTop,
+      left: _paddingRight,
       child: Container(
         width: 56,
         height: 25,

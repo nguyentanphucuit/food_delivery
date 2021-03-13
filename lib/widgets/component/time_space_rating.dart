@@ -4,13 +4,15 @@ import 'package:food_delivery/themes/text_styles.dart';
 class TimeSpaceRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _sizeImage = 14.0;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Image.asset(
           'assets/images/icons/1.0x/mdi_access_time.png',
-          width: 14,
-          height: 14,
+          width: _sizeImage,
+          height: _sizeImage,
         ),
         _distantWidth(2),
         Text(
@@ -36,8 +38,8 @@ class TimeSpaceRating extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/icons/1.0x/Star.png',
-              width: 14,
-              height: 14,
+              width: _sizeImage,
+              height: _sizeImage,
             ),
             _distantWidth(2),
             Text(

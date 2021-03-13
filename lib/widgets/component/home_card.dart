@@ -6,8 +6,10 @@ import 'package:food_delivery/widgets/component/time_space_rating.dart';
 class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _width = MediaQuery.of(context).size.width;
+    final _height = MediaQuery.of(context).size.height;
+
     return Container(
-      // width: 241,
       height: 200,
       child: ListView.builder(
         padding: EdgeInsets.only(right: 50.0),
@@ -27,7 +29,7 @@ class HomeCard extends StatelessWidget {
                   ),
                   child: Container(
                     padding: EdgeInsets.only(bottom: 5),
-                    width: 241,
+                    width: _width * 0.65,
                     child: Column(
                       children: [
                         Image.asset(

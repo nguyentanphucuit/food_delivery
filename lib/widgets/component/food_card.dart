@@ -20,21 +20,23 @@ class FoodCard extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final _sizeImage = 74.0;
+    final _width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           margin: EdgeInsets.only(top: 16, bottom: isTwice ? 8 : 16),
           padding: EdgeInsets.only(left: 24, right: 24),
-          height: 74,
+          height: _sizeImage,
           child: Row(
             children: [
               Expanded(
                 flex: 1,
                 child: Image.asset(
                   'assets/images/1.0x/shrimp.png',
-                  width: 74,
-                  height: 74,
+                  width: _sizeImage,
+                  height: _sizeImage,
                 ),
               ),
               SizedBox(width: 16),
@@ -64,7 +66,7 @@ class FoodCard extends StatelessWidget {
           ),
         ),
         _twiceByYou(),
-        _buildRateReOrder(),
+        _buildRateReOrder(_width),
         Divider(height: 0),
       ],
     );
@@ -174,22 +176,23 @@ class FoodCard extends StatelessWidget {
                   ],
                 )
               : SizedBox(),
-          _buidlSizedBox(2),
+          _distantHeight(2),
         ],
       ),
     );
   }
 
-  _buildRateReOrder() {
+  _buildRateReOrder(_width) {
     return isRateReOrder
         ? Container(
             padding: EdgeInsets.only(bottom: 16, right: 24),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: 106,
-                  height: 29,
+                  width: _width * 0.29,
+                  height: _width * 0.077,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       // shadowColor: Colors.white,
@@ -203,19 +206,21 @@ class FoodCard extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {},
-                    child: Text(
-                      'RATE',
-                      style: StylesText.bodyText13.copyWith(
-                        color: AppColors.neutral2,
-                        fontWeight: FontWeight.bold,
+                    child: Center(
+                      child: Text(
+                        'RATE',
+                        style: StylesText.bodyText13.copyWith(
+                          color: AppColors.neutral2,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(width: 16),
                 Container(
-                  width: 106,
-                  height: 29,
+                  width: _width * 0.29,
+                  height: _width * 0.077,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       // shadowColor: Colors.white,
@@ -244,9 +249,15 @@ class FoodCard extends StatelessWidget {
         : SizedBox();
   }
 
-  _buidlSizedBox(int scales) {
+  _distantHeight(int scales) {
     return SizedBox(
       height: scales * 4.0,
+    );
+  }
+
+  _distantWidth(int scales) {
+    return SizedBox(
+      width: scales * 4.0,
     );
   }
 }
