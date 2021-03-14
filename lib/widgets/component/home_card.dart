@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/providers/list_popular_eatries.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 import 'package:food_delivery/widgets/component/time_space_rating.dart';
+import 'package:food_delivery/widgets/home/home.dart';
+import 'package:provider/provider.dart';
 
 class HomeCard extends StatelessWidget {
+  final list;
+  const HomeCard({@required this.list});
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
-    final _height = MediaQuery.of(context).size.height;
+    final _height = 188.0;
 
     return Container(
-      height: 200,
+      height: _height,
       child: ListView.builder(
-        padding: EdgeInsets.only(right: 50.0),
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: 2,
         itemBuilder: (context, index) {
+          final _data = list[index];
           return Padding(
             padding: const EdgeInsets.only(right: 8),
             child: Column(
@@ -33,7 +39,7 @@ class HomeCard extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/images/1.0x/promotion2.png',
+                          list[index].image,
                         ),
                         Container(
                           padding: EdgeInsets.only(left: 12, right: 12),
@@ -42,17 +48,21 @@ class HomeCard extends StatelessWidget {
                             children: [
                               _distantHeight(3),
                               Text(
-                                'Creamos - Chapel Ln',
+                                _data.title,
                                 style: StylesText.headline16,
                               ),
                               _distantHeight(2),
                               Text(
-                                'Chapel Ln, Harriseahead',
+                                _data.sub,
                                 style: StylesText.caption
                                     .copyWith(color: AppColors.neutral3),
                               ),
                               _distantHeight(1),
-                              TimeSpaceRating(),
+                              TimeSpaceRating(
+                                time: _data.time,
+                                distant: _data.distant,
+                                rating: _data.rating,
+                              ),
                             ],
                           ),
                         ),

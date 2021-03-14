@@ -54,7 +54,8 @@ class _HomePageState extends State<HomePage> {
 
   _buildFooter() {
     return Footer(
-      child: Container(),
+      backgroundColor: AppColors.neutral6,
+      child: SizedBox(),
     );
   }
 
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'HomePage',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_bag),

@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 
 class TimeSpaceRating extends StatelessWidget {
+  final time;
+  final distant;
+  final rating;
+  TimeSpaceRating({
+    @required this.time,
+    @required this.distant,
+    @required this.rating,
+  });
+
   @override
   Widget build(BuildContext context) {
     final _sizeImage = 14.0;
@@ -16,7 +25,7 @@ class TimeSpaceRating extends StatelessWidget {
         ),
         _distantWidth(2),
         Text(
-          '15 mins',
+          time,
           style: StylesText.caption.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -28,7 +37,7 @@ class TimeSpaceRating extends StatelessWidget {
         ),
         _distantWidth(2),
         Text(
-          '3 km',
+          distant,
           style: StylesText.caption.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -43,7 +52,7 @@ class TimeSpaceRating extends StatelessWidget {
             ),
             _distantWidth(2),
             Text(
-              '5.0',
+              rating,
               style: StylesText.caption.copyWith(
                 fontWeight: FontWeight.bold,
               ),

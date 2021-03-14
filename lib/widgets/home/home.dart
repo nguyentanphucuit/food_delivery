@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
+import 'package:food_delivery/widgets/home/categories.dart';
+import 'package:food_delivery/widgets/home/nearby.dart';
+import 'package:food_delivery/widgets/home/popular_cuisines.dart';
+import 'package:food_delivery/widgets/home/popular_eatries.dart';
 import 'package:food_delivery/widgets/home/promotion.dart';
 
 class Home extends StatelessWidget {
@@ -76,11 +80,11 @@ class Home extends StatelessWidget {
           ),
           _distantHeight(6),
           Promotion(),
-          _distantHeight(12),
-          // PopularEatries(),
-          // Categories(),
-          // Nearby(),
-          // PopularCuisines(),
+          _distantHeight(6),
+          PopularEatries(),
+          Categories(),
+          Nearby(),
+          PopularCuisines(),
         ],
       ),
     );

@@ -4,20 +4,20 @@ import 'package:food_delivery/providers/nearby.dart';
 class ListNearby with ChangeNotifier {
   List<Nearby> _listNearby = [
     Nearby(
-      title: 'title',
-      sub: 'sub',
-      time: 'time',
-      distant: 'distant',
-      rating: 'rating',
-      image: 'image',
+      title: 'Lorem Burger - North',
+      sub: 'North Bridge, Halifax',
+      time: '15 mins',
+      distant: '1.1 km',
+      rating: '15 mins',
+      image: 'assets/images/1.0x/burger.png',
     ),
     Nearby(
-      title: 'title1',
-      sub: 'sub1',
-      time: 'time1',
-      distant: 'distant1',
-      rating: 'rating1',
-      image: 'image1',
+      title: 'Steak Ipsum - North Bridge',
+      sub: 'North Bridge, Halifax',
+      time: '15 mins',
+      distant: '1.1 km',
+      rating: '15 mins',
+      image: 'assets/images/1.0x/steak.png',
     ),
     Nearby(
       title: 'title2',

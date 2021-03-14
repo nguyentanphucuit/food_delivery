@@ -5,8 +5,16 @@ import 'package:food_delivery/widgets/component/time_space_rating.dart';
 
 class BrowsingCard extends StatelessWidget {
   final bool isDiscount;
+  final time;
+  final distant;
+  final rating;
 
-  const BrowsingCard({@required this.isDiscount});
+  const BrowsingCard({
+    @required this.isDiscount,
+    @required this.time,
+    @required this.distant,
+    @required this.rating,
+  });
   @override
   Widget build(BuildContext context) {
     final _sizeImage = 74.0;
@@ -64,7 +72,11 @@ class BrowsingCard extends StatelessWidget {
                           ),
                         ),
                         _distantHeight(5),
-                        TimeSpaceRating(),
+                        TimeSpaceRating(
+                          time: time,
+                          distant: distant,
+                          rating: rating,
+                        ),
                       ],
                     ),
                   )

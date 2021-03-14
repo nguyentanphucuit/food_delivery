@@ -73,6 +73,13 @@ flutter:
     - assets/images/1.0x/check_circle.png
     - assets/images/1.0x/star.png
 
+    - assets/images/1.0x/creamos.png
+    - assets/images/1.0x/pizza.png
+    - assets/images/1.0x/burger.png
+    - assets/images/1.0x/steak.png
+    - assets/images/1.0x/Italian.png
+    - assets/images/1.0x/Greece.png
+
     - assets/images/icons/1.0x/
 
     - assets/data/

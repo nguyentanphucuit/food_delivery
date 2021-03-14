@@ -4,20 +4,20 @@ import 'package:food_delivery/providers/popular_eatries.dart';
 class ListPopularEatries with ChangeNotifier {
   List<PopularEatries> _listPopularEatries = [
     PopularEatries(
-      title: 'title',
-      sub: 'sub',
-      time: 'time',
-      distant: 'distant',
-      rating: 'rating',
-      image: 'image',
+      title: 'Creamos - Chapel Ln',
+      sub: 'Chapel Ln, Harriseahead',
+      time: '18 mins',
+      distant: '3 km',
+      rating: '5.0',
+      image: 'assets/images/1.0x/creamos.png',
     ),
     PopularEatries(
-      title: 'title1',
-      sub: 'sub1',
-      time: 'time1',
-      distant: 'distant1',
-      rating: 'rating1',
-      image: 'image1',
+      title: 'Pizzon - CribLn',
+      sub: 'Crib Ln, Halifax',
+      time: '15 mins',
+      distant: '1.1 km',
+      rating: '5.0',
+      image: 'assets/images/1.0x/pizza.png',
     ),
     PopularEatries(
       title: 'title2',

@@ -4,16 +4,16 @@ import 'package:food_delivery/providers/popular_cuisines.dart';
 class ListPopularCuisines with ChangeNotifier {
   List<PopularCuisines> _listPopularCuisines = [
     PopularCuisines(
-      title: 'title',
-      image: 'image',
+      title: 'New Zealander',
+      image: 'assets/images/1.0x/NewZealand.png',
     ),
     PopularCuisines(
-      title: 'title1',
-      image: 'image1',
+      title: 'Italian',
+      image: 'assets/images/1.0x/Italian.png',
     ),
     PopularCuisines(
-      title: 'title2',
-      image: 'image2',
+      title: 'Greece',
+      image: 'assets/images/1.0x/Greece.png',
     ),
   ];
 
