@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 class PopularEatries extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _popular_eatries =
+    final _popularEatries =
         Provider.of<ListPopularEatries>(context).popularEatries;
     return Column(
       children: [
@@ -34,7 +34,7 @@ class PopularEatries extends StatelessWidget {
           ),
         ),
         _distantHeight(2),
-        HomeCard(list: _popular_eatries),
+        HomeCard(list: _popularEatries),
         _distantHeight(6),
       ],
     );

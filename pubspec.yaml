@@ -80,6 +80,10 @@ flutter:
     - assets/images/1.0x/Italian.png
     - assets/images/1.0x/Greece.png
 
+    - assets/images/1.0x/creamos_square.png
+    - assets/images/1.0x/pizza_square.png
+    - assets/images/1.0x/burger_square.png
+
     - assets/images/icons/1.0x/
 
     - assets/data/

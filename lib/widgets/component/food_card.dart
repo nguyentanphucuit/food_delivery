@@ -9,6 +9,15 @@ class FoodCard extends StatelessWidget {
   final bool isTwice;
   final bool isOngoing;
   final bool isTimeSpaceRating;
+  final String title;
+  final String sub;
+  final String time;
+  final String distant;
+  final String rating;
+  final String price;
+  final String discount;
+  final String timeRemain;
+  final String image;
 
   const FoodCard({
     @required this.isOngoing,
@@ -17,6 +26,15 @@ class FoodCard extends StatelessWidget {
     @required this.isColorPrimary,
     @required this.isTwice,
     @required this.isTimeSpaceRating,
+    @required this.title,
+    @required this.sub,
+    @required this.time,
+    @required this.distant,
+    @required this.rating,
+    @required this.price,
+    @required this.discount,
+    @required this.timeRemain,
+    @required this.image,
   });
   @override
   Widget build(BuildContext context) {
@@ -34,7 +52,7 @@ class FoodCard extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Image.asset(
-                  'assets/images/1.0x/shrimp.png',
+                  image,
                   width: _sizeImage,
                   height: _sizeImage,
                 ),
@@ -47,11 +65,11 @@ class FoodCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Creamos',
+                      title,
                       style: StylesText.headline16,
                     ),
                     Text(
-                      '1x Brown Tornado',
+                      sub,
                       style: StylesText.caption.copyWith(
                         color: AppColors.neutral3,
                         fontWeight: FontWeight.bold,
@@ -86,7 +104,7 @@ class FoodCard extends StatelessWidget {
                   ),
                   SizedBox(width: 5),
                   Text(
-                    '15 mins',
+                    time,
                     style: StylesText.caption.copyWith(
                       color: AppColors.neutral1,
                       fontWeight: FontWeight.bold,
@@ -99,7 +117,7 @@ class FoodCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8),
                   Text(
-                    '1.1 km',
+                    distant,
                     style: StylesText.caption.copyWith(
                       color: AppColors.neutral1,
                       fontWeight: FontWeight.bold,
@@ -117,9 +135,10 @@ class FoodCard extends StatelessWidget {
                       ),
                       SizedBox(width: 5),
                       Text(
-                        '05:00',
+                        timeRemain,
                         style: StylesText.bodyText15.copyWith(
                           color: AppColors.primaryOrangeRed,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(width: 5),
@@ -129,7 +148,7 @@ class FoodCard extends StatelessWidget {
         Row(
           children: [
             Text(
-              '\$ 16.00',
+              '\$ ' + price,
               style: StylesText.headline16.copyWith(
                 color: isColorPrimary
                     ? AppColors.primaryOrange
@@ -139,7 +158,7 @@ class FoodCard extends StatelessWidget {
             SizedBox(width: 10),
             onlyMoney
                 ? Text(
-                    '\$ 20.00',
+                    '\$ ' + discount,
                     style: StylesText.caption.copyWith(
                       color: AppColors.neutral3,
                       decoration: TextDecoration.lineThrough,

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class PopularCuisines extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _popular_cuisines =
+    final _popularCuisines =
         Provider.of<ListPopularCuisines>(context).popularCuisines;
     return Column(
       children: [
@@ -38,7 +38,7 @@ class PopularCuisines extends StatelessWidget {
           height: 110,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 3,
+            itemCount: _popularCuisines.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(right: 16),
@@ -52,12 +52,12 @@ class PopularCuisines extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Image.asset(
-                        _popular_cuisines[index].image,
+                        _popularCuisines[index].image,
                       ),
                     ),
                     _buidlSizedBox(2),
                     Text(
-                      _popular_cuisines[index].title,
+                      _popularCuisines[index].title,
                       style: StylesText.bodyText14.copyWith(
                         color: AppColors.neutral1,
                       ),

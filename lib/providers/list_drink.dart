@@ -5,31 +5,26 @@ import 'package:food_delivery/providers/popular_eatries.dart';
 class ListDrink with ChangeNotifier {
   List<Drink> _listDrink = [
     Drink(
-      title: 'title',
-      sub: 'sub',
-      time: 'time',
-      distant: 'distant',
-      rating: 'rating',
-      price: 'price',
-      image: 'image',
+      title: 'Creamos - Chapel Ln',
+      sub: '1x Brown Tornado',
+      time: '10 mins',
+      distant: '1.1 km',
+      rating: '5.0',
+      price: '5.00',
+      timeRemain: '5:00',
+      discount: '3.00',
+      image: 'assets/images/1.0x/creamos_square.png',
     ),
     Drink(
-      title: 'title1',
-      sub: 'sub1',
-      time: 'time1',
-      distant: 'distant1',
-      rating: 'rating1',
-      price: 'price1',
-      image: 'image1',
-    ),
-    Drink(
-      title: 'title2',
-      sub: 'sub2',
-      time: 'time2',
-      distant: 'distant2',
-      rating: 'rating2',
-      price: 'price2',
-      image: 'image2',
+      title: 'Creamos - Chapel Ln',
+      sub: '1x Brown Tornado',
+      time: '10 mins',
+      distant: '1.1 km',
+      rating: '5.0',
+      price: '5.00',
+      timeRemain: '5:00',
+      discount: '3.00',
+      image: 'assets/images/1.0x/creamos_square.png',
     ),
   ];
   List<Drink> get drink {
@@ -44,6 +39,8 @@ class ListDrink with ChangeNotifier {
       distant: drink.distant,
       rating: drink.rating,
       price: drink.price,
+      timeRemain: drink.timeRemain,
+      discount: drink.discount,
       image: drink.image,
     );
     _listDrink.add(newDrink);

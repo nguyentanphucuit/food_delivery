@@ -3,11 +3,11 @@ import 'package:food_delivery/providers/list_popular_eatries.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 import 'package:food_delivery/widgets/component/time_space_rating.dart';
-import 'package:food_delivery/widgets/home/home.dart';
+import 'package:food_delivery/widgets/home_main/home/home.dart';
 import 'package:provider/provider.dart';
 
 class HomeCard extends StatelessWidget {
-  final list;
+  final List list;
   const HomeCard({@required this.list});
 
   @override

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
-import 'package:food_delivery/widgets/home/categories.dart';
-import 'package:food_delivery/widgets/home/nearby.dart';
-import 'package:food_delivery/widgets/home/popular_cuisines.dart';
-import 'package:food_delivery/widgets/home/popular_eatries.dart';
-import 'package:food_delivery/widgets/home/promotion.dart';
+import 'package:food_delivery/widgets/home_main/home/categories.dart';
+import 'package:food_delivery/widgets/home_main/home/nearby.dart';
+import 'package:food_delivery/widgets/home_main/home/popular_cuisines.dart';
+import 'package:food_delivery/widgets/home_main/home/popular_eatries.dart';
+import 'package:food_delivery/widgets/home_main/home/promotion.dart';
 
 class Home extends StatelessWidget {
   @override

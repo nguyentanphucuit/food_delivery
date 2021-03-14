@@ -24,18 +24,18 @@ class Component extends StatelessWidget {
   _buildBody() {
     return Column(
       children: [
-        HomeCard(),
-        BrowsingCard(
-          isDiscount: true,
-        ),
-        FoodCard(
-          onlyMoney: false,
-          isColorPrimary: false,
-          isRateReOrder: true,
-          isTwice: false,
-          isOngoing: false,
-          isTimeSpaceRating: true,
-        ),
+        // HomeCard(),
+        // BrowsingCard(
+        //   isDiscount: true,
+        // ),
+        // FoodCard(
+        //   onlyMoney: false,
+        //   isColorPrimary: false,
+        //   isRateReOrder: true,
+        //   isTwice: false,
+        //   isOngoing: false,
+        //   isTimeSpaceRating: true,
+        // ),
         SizedBox(height: 20),
         Voucher(),
       ],
