@@ -36,6 +36,7 @@ dependencies:
   footer: ^0.0.3
   flushbar: ^1.10.4
   provider: ^5.0.0
+  smooth_page_indicator: ^0.2.1
 
 dev_dependencies:
   flutter_test:
