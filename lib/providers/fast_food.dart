@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class FastFood {
   final String title;
   final String sub;
+  final String address;
   final String time;
   final String distant;
   final String rating;
@@ -14,6 +15,7 @@ class FastFood {
   FastFood({
     @required this.title,
     @required this.sub,
+    @required this.address,
     @required this.time,
     @required this.distant,
     @required this.rating,

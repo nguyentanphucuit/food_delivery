@@ -5,15 +5,23 @@ import 'package:food_delivery/widgets/component/time_space_rating.dart';
 
 class BrowsingCard extends StatelessWidget {
   final bool isDiscount;
-  final time;
-  final distant;
-  final rating;
+  final String time;
+  final String distant;
+  final String rating;
+  final String title;
+  final String address;
+  final String discount;
+  final String image;
 
   const BrowsingCard({
     @required this.isDiscount,
     @required this.time,
     @required this.distant,
     @required this.rating,
+    @required this.title,
+    @required this.address,
+    @required this.discount,
+    @required this.image,
   });
   @override
   Widget build(BuildContext context) {
@@ -48,7 +56,7 @@ class BrowsingCard extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: Image.asset(
-                      'assets/images/1.0x/shrimp.png',
+                      image,
                       width: _sizeImage,
                       height: _sizeImage,
                     ),
@@ -61,11 +69,12 @@ class BrowsingCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Pizzon - Crib Ln',
+                          title,
                           style: StylesText.headline16,
                         ),
+                        _distantHeight(1),
                         Text(
-                          '1x Black Peper',
+                          address,
                           style: StylesText.caption.copyWith(
                             color: AppColors.neutral3,
                             fontWeight: FontWeight.bold,
@@ -118,7 +127,7 @@ class BrowsingCard extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            '20%',
+            discount,
             style: StylesText.bodyText15.copyWith(color: AppColors.neutral6),
           ),
         ),

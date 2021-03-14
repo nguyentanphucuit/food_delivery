@@ -1,12 +1,10 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/providers/fast_food.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
-import 'package:food_delivery/widgets/component/food_card.dart';
 import 'package:food_delivery/widgets/home_main/home/home.dart';
-import 'package:food_delivery/widgets/home_main/order/fast_foods.dart';
 import 'package:food_delivery/widgets/home_main/order/order.dart';
+import 'package:food_delivery/widgets/home_main/saved/saved.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 
@@ -58,6 +56,8 @@ class _HomePageState extends State<HomePage> {
         return Home();
       case 1:
         return Order();
+      case 2:
+        return Saved();
       default:
     }
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Drink {
   final String title;
   final String sub;
+  final String address;
   final String time;
   final String distant;
   final String rating;
@@ -13,6 +14,7 @@ class Drink {
 
   Drink({
     @required this.title,
+    @required this.address,
     @required this.sub,
     @required this.time,
     @required this.distant,

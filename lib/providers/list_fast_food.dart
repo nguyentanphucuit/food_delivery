@@ -7,6 +7,7 @@ class ListFastFood with ChangeNotifier {
     FastFood(
       title: 'Pizzon - Crib Ln',
       sub: '1x Shrimp Pizza',
+      address: '444 Crib Ln, Halifax',
       time: '15 mins',
       distant: '1.1 km',
       rating: '5.0',
@@ -18,6 +19,7 @@ class ListFastFood with ChangeNotifier {
     FastFood(
       title: 'Lorem Burger',
       sub: '1x Black Peper',
+      address: '888 North Bridge, Halifax',
       time: '15 mins',
       distant: '1.1 km',
       rating: '5.0',
@@ -36,6 +38,7 @@ class ListFastFood with ChangeNotifier {
     final newFastFood = FastFood(
       title: fastFood.title,
       sub: fastFood.sub,
+      address: fastFood.address,
       time: fastFood.time,
       distant: fastFood.distant,
       rating: fastFood.rating,

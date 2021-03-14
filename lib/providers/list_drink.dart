@@ -7,6 +7,7 @@ class ListDrink with ChangeNotifier {
     Drink(
       title: 'Creamos - Chapel Ln',
       sub: '1x Brown Tornado',
+      address: '222 Chapel Ln, Harriseahead',
       time: '10 mins',
       distant: '1.1 km',
       rating: '5.0',
@@ -18,6 +19,7 @@ class ListDrink with ChangeNotifier {
     Drink(
       title: 'Creamos - Chapel Ln',
       sub: '1x Brown Tornado',
+      address: '222 Chapel Ln, Harriseahead',
       time: '10 mins',
       distant: '1.1 km',
       rating: '5.0',
@@ -35,6 +37,7 @@ class ListDrink with ChangeNotifier {
     final newDrink = Drink(
       title: drink.title,
       sub: drink.sub,
+      address: drink.address,
       time: drink.time,
       distant: drink.distant,
       rating: drink.rating,

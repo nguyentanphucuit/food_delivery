@@ -39,8 +39,7 @@ class OrderUpcoming extends StatelessWidget {
         Container(
             padding: EdgeInsets.only(left: 24),
             child: Text('Fast Food', style: StylesText.headline20)),
-        FastFoods(
-            isRateOrder: false, isTimeRemain: false, isColorPrimary: true),
+        FastFoods(isRateOrder: false, isTimeRemain: false, isColorPrimary: true),
       ],
     );
   }
