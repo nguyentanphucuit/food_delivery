@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/pages/home_main.dart';
 import 'package:food_delivery/pages/restaurant.dart';
 import 'package:food_delivery/pages/restaurant_info.dart';
+import 'package:food_delivery/pages/voucher_page.dart';
 import 'package:food_delivery/providers/list_drink.dart';
 import 'package:food_delivery/providers/list_fast_food.dart';
 import 'package:food_delivery/providers/list_hot_deals.dart';
@@ -15,6 +16,7 @@ import 'package:food_delivery/providers/list_popular_cuisines.dart';
 import 'package:food_delivery/providers/list_popular_eatries.dart';
 import 'package:food_delivery/providers/list_popular_promotion.dart';
 import 'package:food_delivery/providers/list_special_delivery.dart';
+import 'package:food_delivery/widgets/component/voucher.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -71,7 +73,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: RestaurantInfo(),
+        home: VoucherPage(),
       ),
     );
   }
