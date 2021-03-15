@@ -3,6 +3,7 @@ import 'package:food_delivery/pages/home_main.dart';
 import 'package:food_delivery/pages/order_checkout.dart';
 import 'package:food_delivery/pages/restaurant.dart';
 import 'package:food_delivery/pages/restaurant_info.dart';
+import 'package:food_delivery/pages/restaurant_menu.dart';
 import 'package:food_delivery/pages/voucher_page.dart';
 import 'package:food_delivery/providers/list_drink.dart';
 import 'package:food_delivery/providers/list_fast_food.dart';
@@ -74,7 +75,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: OrderCheckout(),
+        home: RestaurantMenu(),
       ),
     );
   }

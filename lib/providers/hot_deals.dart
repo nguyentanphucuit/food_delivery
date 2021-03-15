@@ -6,6 +6,7 @@ class HotDeals {
   final String sub;
   final String price;
   final String discount;
+  final bool isTwice;
   final String image;
 
   HotDeals({
@@ -14,6 +15,7 @@ class HotDeals {
     @required this.sub,
     @required this.price,
     @required this.discount,
+    @required this.isTwice,
     @required this.image,
   });
 }

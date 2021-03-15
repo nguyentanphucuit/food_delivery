@@ -6,6 +6,7 @@ class SpecialDelivery {
   final String kCal;
   final String price;
   final String discount;
+  final bool isTwice;
   final String image;
 
   SpecialDelivery({
@@ -14,6 +15,7 @@ class SpecialDelivery {
     @required this.kCal,
     @required this.price,
     @required this.discount,
+    @required this.isTwice,
     @required this.image,
   });
 }
