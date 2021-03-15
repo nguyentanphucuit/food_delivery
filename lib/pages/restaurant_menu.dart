@@ -6,6 +6,7 @@ import 'package:food_delivery/themes/text_styles.dart';
 import 'package:food_delivery/widgets/circle_tab_indicator.dart';
 import 'package:food_delivery/widgets/hot_deals.dart';
 import 'package:food_delivery/widgets/special_deliveries.dart';
+import 'package:food_delivery/widgets/traditionals.dart';
 
 class RestaurantMenu extends StatefulWidget {
   @override
@@ -79,8 +80,9 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
             ),
             Container(
               height: 440,
-              // child: ListTraditional(),
+              child: Traditionals(isRateOrder: false, isColorPrimary: true),
             ),
+            _buidlSizedBox(2),
           ],
         ),
       ),

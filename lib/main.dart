@@ -18,6 +18,7 @@ import 'package:food_delivery/providers/list_popular_cuisines.dart';
 import 'package:food_delivery/providers/list_popular_eatries.dart';
 import 'package:food_delivery/providers/list_popular_promotion.dart';
 import 'package:food_delivery/providers/list_special_delivery.dart';
+import 'package:food_delivery/providers/list_traditional.dart';
 import 'package:food_delivery/widgets/component/voucher.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
@@ -40,6 +41,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: ListHotDeals(),
+        ),
+        ChangeNotifierProvider.value(
+          value: ListTraditional(),
         ),
         ChangeNotifierProvider.value(
           value: ListMealPromotion(),
