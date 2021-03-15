@@ -4,6 +4,7 @@ import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 import 'package:food_delivery/widgets/home_main/home/home.dart';
 import 'package:food_delivery/widgets/home_main/order/order.dart';
+import 'package:food_delivery/widgets/home_main/profile/profile.dart';
 import 'package:food_delivery/widgets/home_main/saved/saved.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
   Flushbar flush;
   bool _wasButtonClicked;
   bool _isDisable = true;
@@ -58,6 +59,8 @@ class _HomePageState extends State<HomePage> {
         return Order();
       case 2:
         return Saved();
+      case 3:
+        return Profile();
       default:
     }
   }

@@ -28,7 +28,7 @@ class HomeCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Card(
-                  elevation: 5,
+                  elevation: 2,
                   shadowColor: AppColors.neutral6,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),

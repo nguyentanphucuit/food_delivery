@@ -84,6 +84,9 @@ flutter:
     - assets/images/1.0x/pizza_square.png
     - assets/images/1.0x/burger_square.png
 
+    - assets/images/1.0x/Avatar.png
+    - assets/images/1.0x/Notification.png
+
     - assets/images/icons/1.0x/
 
     - assets/data/
