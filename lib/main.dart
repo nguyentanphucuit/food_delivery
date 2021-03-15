@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/pages/home_main.dart';
+import 'package:food_delivery/pages/restaurant.dart';
+import 'package:food_delivery/pages/restaurant_info.dart';
 import 'package:food_delivery/providers/list_drink.dart';
 import 'package:food_delivery/providers/list_fast_food.dart';
 import 'package:food_delivery/providers/list_hot_deals.dart';
@@ -69,7 +71,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: HomePage(),
+        home: RestaurantInfo(),
       ),
     );
   }

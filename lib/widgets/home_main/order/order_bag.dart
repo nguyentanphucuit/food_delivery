@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/themes/text_styles.dart';
-import 'package:food_delivery/widgets/home_main/order/drinks.dart';
-import 'package:food_delivery/widgets/home_main/order/fast_foods.dart';
+import 'package:food_delivery/widgets/drinks.dart';
+import 'package:food_delivery/widgets/fast_foods.dart';
 
 class OrderBag extends StatelessWidget {
   @override

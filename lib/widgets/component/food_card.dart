@@ -9,6 +9,7 @@ class FoodCard extends StatelessWidget {
   final bool isTwice;
   final bool isOngoing;
   final bool isTimeSpaceRating;
+
   final String title;
   final String sub;
   final String time;
@@ -28,12 +29,12 @@ class FoodCard extends StatelessWidget {
     @required this.isTimeSpaceRating,
     @required this.title,
     @required this.sub,
-    @required this.time,
-    @required this.distant,
-    @required this.rating,
+    this.time,
+    this.distant,
+    this.rating,
     @required this.price,
     @required this.discount,
-    @required this.timeRemain,
+    this.timeRemain,
     @required this.image,
   });
   @override
@@ -64,9 +65,21 @@ class FoodCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      title,
-                      style: StylesText.headline16,
+                    Row(
+                      children: [
+                        Text(
+                          title,
+                          style: StylesText.headline16,
+                        ),
+                        _distantWidth(2),
+                        // Text(
+                        //   'KCal : ',
+                        //   style: StylesText.caption.copyWith(
+                        //     color: AppColors.neutral2,
+                        //     fontWeight: FontWeight.bold,
+                        //   ),
+                        // )
+                      ],
                     ),
                     Text(
                       sub,
