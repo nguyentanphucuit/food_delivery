@@ -58,7 +58,7 @@ class FoodCard extends StatelessWidget {
                   height: _sizeImage,
                 ),
               ),
-              SizedBox(width: 16),
+              _distantWidth(4),
               Expanded(
                 flex: 3,
                 child: Column(
@@ -88,7 +88,7 @@ class FoodCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    _distantHeight(2),
                     _onlyMoney()
                   ],
                 ),
@@ -115,7 +115,7 @@ class FoodCard extends StatelessWidget {
                     Icons.access_time_outlined,
                     size: 14,
                   ),
-                  SizedBox(width: 5),
+                  _distantWidth(1),
                   Text(
                     time,
                     style: StylesText.caption.copyWith(
@@ -123,12 +123,12 @@ class FoodCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  _distantWidth(1),
                   Icon(
                     Icons.circle,
                     size: 5,
                   ),
-                  SizedBox(width: 8),
+                  _distantWidth(2),
                   Text(
                     distant,
                     style: StylesText.caption.copyWith(
@@ -146,7 +146,7 @@ class FoodCard extends StatelessWidget {
                         color: AppColors.primaryOrangeRed,
                         size: 16,
                       ),
-                      SizedBox(width: 5),
+                      _distantWidth(1),
                       Text(
                         timeRemain,
                         style: StylesText.bodyText15.copyWith(
@@ -154,7 +154,7 @@ class FoodCard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 5),
+                      _distantWidth(1),
                     ],
                   )
                 : SizedBox(),
@@ -168,7 +168,7 @@ class FoodCard extends StatelessWidget {
                     : AppColors.neutral1,
               ),
             ),
-            SizedBox(width: 10),
+            _distantWidth(3),
             onlyMoney
                 ? Text(
                     '\$ ' + discount,
@@ -198,7 +198,7 @@ class FoodCard extends StatelessWidget {
                       size: 12,
                       color: AppColors.neutral3,
                     ),
-                    SizedBox(width: 4),
+                    _distantWidth(1),
                     Text(
                       'twice by you',
                       style: StylesText.caption.copyWith(
@@ -249,7 +249,7 @@ class FoodCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                _distantWidth(4),
                 Container(
                   width: _width * 0.29,
                   height: _width * 0.077,

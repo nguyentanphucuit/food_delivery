@@ -61,7 +61,7 @@ class RestaurantInfo extends StatelessWidget {
           Row(
             children: [
               _buildButton('Fast Food'),
-              SizedBox(width: 8),
+              _distantWidth(2),
               _buildButton('Western cuisine'),
             ],
           ),
@@ -153,7 +153,7 @@ class RestaurantInfo extends StatelessWidget {
               icon,
               size: 16,
             ),
-            SizedBox(width: 8),
+            _distantWidth(2),
             Text(
               text,
               style: StylesText.bodyText15.copyWith(

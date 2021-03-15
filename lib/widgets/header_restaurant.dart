@@ -29,7 +29,7 @@ class Header extends StatelessWidget {
           Row(
             children: [
               _buildButton('Fast Food'),
-              SizedBox(width: 8),
+              _distantWidth(2),
               _buildButton('Western cuisine'),
             ],
           ),
@@ -94,7 +94,7 @@ class Header extends StatelessWidget {
                   height: 20,
                 ),
               ),
-              SizedBox(width: 5),
+              _distantWidth(1),
               Text(
                 'Discount 40% pizza',
                 style:
@@ -104,12 +104,6 @@ class Header extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  _distantHeight(int scales) {
-    return SizedBox(
-      height: scales * 4.0,
     );
   }
 
@@ -126,6 +120,18 @@ class Header extends StatelessWidget {
           style: StylesText.caption.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
+    );
+  }
+
+  _distantHeight(int scales) {
+    return SizedBox(
+      height: scales * 4.0,
+    );
+  }
+
+  _distantWidth(int scales) {
+    return SizedBox(
+      width: scales * 4.0,
     );
   }
 }

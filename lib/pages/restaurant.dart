@@ -51,7 +51,7 @@ class Restaurant extends StatelessWidget {
     );
   }
 
-  _buidlSizedBox(int scales) {
+  _distantHeight(int scales) {
     return SizedBox(
       height: scales * 4.0,
     );

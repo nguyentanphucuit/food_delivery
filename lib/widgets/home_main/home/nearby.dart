@@ -33,14 +33,14 @@ class Nearby extends StatelessWidget {
             ],
           ),
         ),
-        _buidlSizedBox(4),
+        _distantHeight(4),
         HomeCard(list: _nearby),
-        _buidlSizedBox(8),
+        _distantHeight(8),
       ],
     );
   }
 
-  _buidlSizedBox(int scales) {
+  _distantHeight(int scales) {
     return SizedBox(
       height: scales * 4.0,
     );

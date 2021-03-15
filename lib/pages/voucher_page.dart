@@ -46,21 +46,15 @@ class VoucherPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _promoCode(),
-          _buidlSizedBox(6),
+          _distantHeight(6),
           Text(
             'Select your vouchers',
             style: StylesText.headline20,
           ),
-          _buidlSizedBox(4),
+          _distantHeight(4),
           Voucher(),
         ],
       ),
-    );
-  }
-
-  _buidlSizedBox(int scales) {
-    return SizedBox(
-      height: scales * 4.0,
     );
   }
 
@@ -112,6 +106,18 @@ class VoucherPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  _distantHeight(int scales) {
+    return SizedBox(
+      height: scales * 4.0,
+    );
+  }
+
+  _distantWidth(int scales) {
+    return SizedBox(
+      width: scales * 4.0,
     );
   }
 }

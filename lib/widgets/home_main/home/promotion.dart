@@ -29,7 +29,7 @@ class Promotion extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 12),
+        _distantHeight(3),
         Container(
           child: SmoothPageIndicator(
             controller: controller,
@@ -43,6 +43,12 @@ class Promotion extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  _distantHeight(int scales) {
+    return SizedBox(
+      height: scales * 4.0,
     );
   }
 }

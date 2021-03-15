@@ -66,7 +66,7 @@ class Voucher extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: _width * 0.03),
+                    _distantWidth(3),
                     Container(
                       height: _height,
                       child: Column(

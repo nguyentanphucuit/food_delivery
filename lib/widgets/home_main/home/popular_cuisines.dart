@@ -32,7 +32,7 @@ class PopularCuisines extends StatelessWidget {
             ],
           ),
         ),
-        _buidlSizedBox(4),
+        _distantHeight(4),
         Container(
           // width: 241,
           height: 110,
@@ -55,7 +55,7 @@ class PopularCuisines extends StatelessWidget {
                         _popularCuisines[index].image,
                       ),
                     ),
-                    _buidlSizedBox(2),
+                    _distantHeight(2),
                     Text(
                       _popularCuisines[index].title,
                       style: StylesText.bodyText14.copyWith(
@@ -72,7 +72,7 @@ class PopularCuisines extends StatelessWidget {
     );
   }
 
-  _buidlSizedBox(int scales) {
+  _distantHeight(int scales) {
     return SizedBox(
       height: scales * 4.0,
     );

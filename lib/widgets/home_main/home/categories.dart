@@ -38,7 +38,7 @@ class Categories extends StatelessWidget {
                           'assets/images/1.0x/discount.png',
                         ),
                       ),
-                      SizedBox(height: 16),
+                      _distantHeight(4),
                       Text(
                         'Promos',
                         style: StylesText.bodyText14.copyWith(

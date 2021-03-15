@@ -61,7 +61,7 @@ class BrowsingCard extends StatelessWidget {
                       height: _sizeImage,
                     ),
                   ),
-                  SizedBox(width: 16),
+                  _distantWidth(4),
                   Expanded(
                     flex: 3,
                     child: Column(
