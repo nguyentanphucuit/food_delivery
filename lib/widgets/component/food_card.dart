@@ -97,9 +97,85 @@ class FoodCard extends StatelessWidget {
           ),
         ),
         _twiceByYou(),
-        _buildRateReOrder(_width),
+        _buildRateReOrder(_width, context),
         Divider(height: 0),
       ],
+    );
+  }
+
+  _rating(context) {
+    showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.0),
+          ),
+        ),
+        title: Container(
+          width: 243,
+          // height: 90,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              _distantHeight(4),
+              Text(
+                "Pizzon - Crib Ln",
+                style:
+                    StylesText.headline20.copyWith(fontWeight: FontWeight.bold),
+              ),
+              _distantHeight(6),
+              Container(
+                // padding: EdgeInsets.only(top: 16),
+                width: 208,
+                height: 32,
+                child: Image.asset('assets/images/1.0x/star.png'),
+              ),
+              _distantHeight(8),
+              Text(
+                "Score the restaurant’s services",
+                style: StylesText.bodyText15.copyWith(color: Colors.black87),
+              ),
+              _distantHeight(4),
+              Container(
+                height: 5,
+                color: AppColors.background,
+              ),
+              _distantHeight(4),
+              Text(
+                "Please consider giving the restaurant some suggestion for better service",
+                style:
+                    StylesText.bodyText14.copyWith(color: AppColors.neutral3),
+              ),
+              _distantHeight(20),
+            ],
+          ),
+        ),
+        content: Container(
+          height: 30,
+          // width: 303,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 25,
+                child: InkWell(
+                  child: Text(
+                    'Submit',
+                    style: StylesText.bodyText16.copyWith(
+                      color: AppColors.primaryOrangeRed,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -214,7 +290,7 @@ class FoodCard extends StatelessWidget {
     );
   }
 
-  _buildRateReOrder(_width) {
+  _buildRateReOrder(_width, context) {
     return isRateReOrder
         ? Container(
             padding: EdgeInsets.only(bottom: 16, right: 24),
@@ -237,7 +313,9 @@ class FoodCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      _rating(context);
+                    },
                     child: Center(
                       child: Text(
                         'RATE',

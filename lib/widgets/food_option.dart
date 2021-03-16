@@ -16,6 +16,13 @@ enum OptionTopping { potato, pineapple, pork }
 enum OptionSauces { ketchup, chili, ginger }
 
 class _FoodOptionState extends State<FoodOption> {
+  @override
+  void setState(fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
   OptionSize _size = OptionSize.m;
   OptionTopping _topping = OptionTopping.potato;
   OptionSauces _sauces = OptionSauces.ketchup;
@@ -197,7 +204,10 @@ class _FoodOptionState extends State<FoodOption> {
                   width: MediaQuery.of(context).size.width,
                   height: 50,
                   child: ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        _orderSuccess();
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6.0),
@@ -430,6 +440,93 @@ class _FoodOptionState extends State<FoodOption> {
         ),
         // _distantHeight(3),
       ],
+    );
+  }
+
+  _orderSuccess() {
+    showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.0),
+          ),
+        ),
+        title: Container(
+          width: 243,
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                // padding: EdgeInsets.only(top: 16),
+                width: 65,
+                height: 65,
+                child: Image.asset('assets/images/1.0x/check_circle.png'),
+              ),
+              _distantHeight(4),
+              Text(
+                "You Place the Order Successfully",
+                style:
+                    StylesText.bodyText15.copyWith(fontWeight: FontWeight.bold),
+              ),
+              // _distantHeight(2),
+            ],
+          ),
+        ),
+        content: Container(
+          height: 76,
+          width: 303,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(children: [
+                  TextSpan(
+                    text:
+                        "You placed the order successfully. You will get your food within ",
+                    style: StylesText.caption.copyWith(
+                      color: AppColors.neutral1,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "15 minutes. ",
+                    style: StylesText.caption.copyWith(
+                      color: AppColors.neutral1,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Thanks for using our services. Enjoy your food!",
+                    style: StylesText.caption.copyWith(
+                      color: AppColors.neutral1,
+                    ),
+                  ),
+                ]),
+              ),
+              _distantHeight(2),
+              Container(
+                height: 25,
+                child: InkWell(
+                  child: Text(
+                    'Keep Browsing',
+                    style: StylesText.bodyText16.copyWith(
+                      color: AppColors.primaryOrangeRed,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {
+                    setState(() {
+                      Navigator.of(context).pop();
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
