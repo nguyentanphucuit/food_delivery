@@ -10,13 +10,6 @@ class Categories extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Categories',
-            style: StylesText.headline20.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          _distantHeight(4),
           Container(
             height: 90,
             child: ListView.builder(
@@ -51,7 +44,6 @@ class Categories extends StatelessWidget {
               },
             ),
           ),
-          _distantHeight(8),
         ],
       ),
     );

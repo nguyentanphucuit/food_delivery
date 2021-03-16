@@ -54,7 +54,7 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
               child:
                   SpecialDeliveries(isRateOrder: false, isColorPrimary: true),
             ),
-            _buidlSizedBox(2),
+            _distantHeight(2),
             Container(height: 5, color: AppColors.background),
             Container(
               padding: EdgeInsets.only(top: 24, left: 24, bottom: 8),
@@ -69,7 +69,7 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
               height: 440,
               child: HotDeals(isRateOrder: false, isColorPrimary: true),
             ),
-            _buidlSizedBox(2),
+            _distantHeight(2),
             Container(height: 5, color: AppColors.background),
             Container(
               padding: EdgeInsets.only(top: 24, left: 24, bottom: 8),
@@ -84,7 +84,7 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
               height: 440,
               child: Traditionals(isRateOrder: false, isColorPrimary: true),
             ),
-            _buidlSizedBox(2),
+            _distantHeight(2),
           ],
         ),
       ),
@@ -144,7 +144,7 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
     );
   }
 
-  _buidlSizedBox(int scales) {
+  _distantHeight(int scales) {
     return SizedBox(
       height: scales * 4.0,
     );

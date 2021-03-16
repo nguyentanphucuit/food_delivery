@@ -127,7 +127,7 @@ class BrowsingCard extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            discount,
+            discount + "%",
             style: StylesText.bodyText15.copyWith(color: AppColors.neutral6),
           ),
         ),

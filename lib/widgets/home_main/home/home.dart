@@ -82,7 +82,15 @@ class Home extends StatelessWidget {
           Promotion(),
           _distantHeight(6),
           PopularEatries(),
+          Text(
+            'Categories',
+            style: StylesText.headline20.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          _distantHeight(4),
           Categories(),
+          _distantHeight(8),
           Nearby(),
           PopularCuisines(),
         ],

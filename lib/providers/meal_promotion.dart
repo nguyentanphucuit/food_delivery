@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MealPromotion {
   final String title;
-  final String sub;
+  final String address;
   final String time;
   final String distant;
   final String rating;
@@ -11,7 +11,7 @@ class MealPromotion {
 
   MealPromotion({
     @required this.title,
-    @required this.sub,
+    @required this.address,
     @required this.time,
     @required this.distant,
     @required this.rating,
