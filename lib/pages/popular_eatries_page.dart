@@ -6,7 +6,7 @@ import 'package:food_delivery/widgets/meal_promotions.dart';
 import 'package:food_delivery/widgets/nearby_populars.dart';
 import 'package:food_delivery/widgets/other_meal.dart';
 
-class FoodCategories extends StatelessWidget {
+class PopularEatriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,13 +20,13 @@ class FoodCategories extends StatelessWidget {
   _buildAppBar() {
     return AppBar(
       backgroundColor: AppColors.neutral6,
-      elevation: 0,
+      elevation: 1,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(Icons.arrow_back_ios, size: 24, color: AppColors.neutral1),
           Text(
-            'Categories',
+            'Popular Eatries',
             style: StylesText.headline20.copyWith(fontWeight: FontWeight.bold),
           ),
           Icon(null)
@@ -40,11 +40,6 @@ class FoodCategories extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: EdgeInsets.only(left: 24, right: 24),
-            child: Categories(),
-          ),
-          _distantHeight(2),
           Divider(height: 0),
           _distantHeight(8),
           Container(
@@ -53,7 +48,7 @@ class FoodCategories extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Meal Promotion',
+                  'Popular Promotion',
                   style: StylesText.headline20,
                 ),
                 Text(
@@ -72,7 +67,7 @@ class FoodCategories extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(left: 24, right: 24),
             child: Text(
-              'Nearby',
+              'Nearby Promotion',
               style: StylesText.headline20,
             ),
           ),
@@ -83,7 +78,7 @@ class FoodCategories extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(left: 24, right: 24),
             child: Text(
-              'Other Meal',
+              'Other Popular',
               style: StylesText.headline20,
             ),
           ),

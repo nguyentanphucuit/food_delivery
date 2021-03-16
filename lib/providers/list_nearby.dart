@@ -9,8 +9,7 @@ class ListNearby with ChangeNotifier {
       time: '15 mins',
       distant: '1.1 km',
       rating: '5.0',
-      image: 'assets/images/1.0x/steak_ipsum.png',
-      // image: 'assets/images/1.0x/burger.png',
+      image: 'assets/images/1.0x/burger.png',
     ),
     Nearby(
       title: 'Steak Ipsum - North Bridge',
@@ -18,8 +17,7 @@ class ListNearby with ChangeNotifier {
       time: '15 mins',
       distant: '1.1 km',
       rating: '5.0',
-      image: 'assets/images/1.0x/chicken_world.png',
-      // image: 'assets/images/1.0x/steak.png',
+      image: 'assets/images/1.0x/steak.png',
     ),
     Nearby(
       title: 'Steak Ipsum - North Bridge',
