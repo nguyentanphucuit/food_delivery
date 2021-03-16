@@ -144,12 +144,6 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
     );
   }
 
-  _distantHeight(int scales) {
-    return SizedBox(
-      height: scales * 4.0,
-    );
-  }
-
   _buildFlushbar() {
     _isDisable = false;
     flush = Flushbar<bool>(
@@ -220,6 +214,12 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
       builder: (BuildContext bc) {
         return FoodOption();
       },
+    );
+  }
+
+  _distantHeight(int scales) {
+    return SizedBox(
+      height: scales * 4.0,
     );
   }
 }

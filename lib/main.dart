@@ -4,6 +4,7 @@ import 'package:food_delivery/pages/home_main.dart';
 import 'package:food_delivery/pages/list_voucher.dart';
 import 'package:food_delivery/pages/login_page.dart';
 import 'package:food_delivery/pages/order_checkout.dart';
+import 'package:food_delivery/pages/payment_methods.dart';
 import 'package:food_delivery/pages/popular_eatries_page.dart';
 import 'package:food_delivery/pages/restaurant.dart';
 import 'package:food_delivery/pages/restaurant_info.dart';
@@ -85,7 +86,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: ListVoucher(),
+        home: PaymentMethods(),
       ),
     );
   }
