@@ -66,9 +66,11 @@ class _LoginState extends State<Login> {
                       TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            setState(() {
-                              isSignIn = !isSignIn;
-                            });
+                            setState(
+                              () {
+                                isSignIn = !isSignIn;
+                              },
+                            );
                           },
                         text:
                             isSignIn ? 'Sign up now!' : 'Already have account?',

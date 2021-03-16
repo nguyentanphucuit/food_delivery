@@ -4,6 +4,7 @@ import 'package:flushbar/flushbar_route.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 import 'package:food_delivery/widgets/circle_tab_indicator.dart';
+import 'package:food_delivery/widgets/food_option.dart';
 import 'package:food_delivery/widgets/hot_deals.dart';
 import 'package:food_delivery/widgets/special_deliveries.dart';
 import 'package:food_delivery/widgets/traditionals.dart';
@@ -125,9 +126,8 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
             icon: Icon(Icons.favorite_border_outlined,
                 size: 24, color: AppColors.neutral1),
             onPressed: () {
-              if (_isDisable) _buildFlushbar();
-
-              // _buildFlushbar();
+              // if (_isDisable) _buildFlushbar();09
+              _buildBottomSheetPopup(context);
             },
           ),
         ],
@@ -207,5 +207,18 @@ class _RestaurantMenuState extends State<RestaurantMenu> {
           _wasButtonClicked = result;
         });
       });
+  }
+
+  void _buildBottomSheetPopup(context) {
+    showModalBottomSheet(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24.0),
+      ),
+      isScrollControlled: true,
+      context: context,
+      builder: (BuildContext bc) {
+        return FoodOption();
+      },
+    );
   }
 }
