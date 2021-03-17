@@ -92,6 +92,8 @@ class _ProfileAddressState extends State<ProfileAddress> {
         _userInfomation(_height),
         _distantHeight(8),
         _address(),
+        _distantHeight(20),
+        _save(),
       ],
     );
   }
@@ -133,8 +135,8 @@ class _ProfileAddressState extends State<ProfileAddress> {
         style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
         decoration: InputDecoration(
           labelText: name,
-          labelStyle: StylesText.caption
-              .copyWith(color: AppColors.neutral2, fontWeight: FontWeight.bold),
+          labelStyle: StylesText.bodyText16
+              .copyWith(color: AppColors.neutral3, fontWeight: FontWeight.bold),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -182,13 +184,14 @@ class _ProfileAddressState extends State<ProfileAddress> {
           ),
         ),
         _distantHeight(4),
-        _location(),
-        _location(),
+        _location('222 Cullingworth Mills Yard',
+            '222 Cullingworth Mills Yard, North Bridge, Halifax'),
+        _location('31 Canterbury Road', '31 Canterbury Road, Valley Field'),
       ],
     );
   }
 
-  _location() {
+  _location(title, subTitle) {
     return Column(
       children: [
         Divider(height: 0),
@@ -206,13 +209,13 @@ class _ProfileAddressState extends State<ProfileAddress> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '222 Cullingworth Mills Yard',
+                    title,
                     style: StylesText.bodyText15
                         .copyWith(color: AppColors.neutral2),
                   ),
                   _distantHeight(2),
                   Text(
-                    '222 Cullingworth Mills Yard, North Bridge, Halifax',
+                    subTitle,
                     style:
                         StylesText.caption.copyWith(color: AppColors.neutral3),
                   ),
@@ -224,6 +227,35 @@ class _ProfileAddressState extends State<ProfileAddress> {
         _distantHeight(2),
         Divider(height: 0),
       ],
+    );
+  }
+
+  _save() {
+    return Container(
+      padding: EdgeInsets.only(top: 16, bottom: 24, left: 24, right: 24),
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            child: ElevatedButton(
+                onPressed: null,
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  primary: AppColors.primaryOrangeRed, // background
+                ),
+                child: Text(
+                  'SAVE',
+                  style: StylesText.bodyText15.copyWith(
+                    color: AppColors.neutral6,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+          ),
+        ],
+      ),
     );
   }
 
