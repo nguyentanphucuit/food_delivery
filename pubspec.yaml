@@ -95,7 +95,7 @@ flutter:
     - assets/images/1.0x/steak_ipsum.png
     - assets/images/1.0x/chicken_world.png
     - assets/images/1.0x/super_rib.png
-
+    - assets/images/1.0x/map.png
     - assets/images/1.0x/credit_card.png
     - assets/images/1.0x/credit_card_back.png
 

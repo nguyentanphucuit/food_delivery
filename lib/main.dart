@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/pages/credit_card.dart';
+import 'package:food_delivery/pages/credit_card_accuracy.dart';
 import 'package:food_delivery/pages/food_categories.dart';
 import 'package:food_delivery/pages/home_main.dart';
 import 'package:food_delivery/pages/list_voucher.dart';
 import 'package:food_delivery/pages/login_page.dart';
+import 'package:food_delivery/pages/new_address.dart';
 import 'package:food_delivery/pages/order_checkout.dart';
 import 'package:food_delivery/pages/payment_methods.dart';
 import 'package:food_delivery/pages/popular_eatries_page.dart';
@@ -88,7 +90,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: CreditCard(),
+        home: CreditCardAccuracy(),
       ),
     );
   }

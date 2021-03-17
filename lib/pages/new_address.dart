@@ -1,29 +1,36 @@
-import 'package:food_delivery/pages/new_address.dart';
 import 'package:food_delivery/themes/app_colors.dart';
 import 'package:food_delivery/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class ProfileAddress extends StatefulWidget {
+class NewAddress extends StatefulWidget {
+  final name;
+  final gender;
+  final phone;
+
+  NewAddress({
+    @required this.name,
+    @required this.gender,
+    @required this.phone,
+  });
   @override
-  _ProfileAddressState createState() => _ProfileAddressState();
+  _NewAddressState createState() => _NewAddressState();
 }
 
-class _ProfileAddressState extends State<ProfileAddress> {
+class _NewAddressState extends State<NewAddress> {
   @override
   void initState() {
-    firstName.text = 'Pinocchio';
-    lastName.text = 'Ocoho';
-    email.text = 'OcohoPin1998@gmail.com';
-    gender.text = 'Female';
-    phone.text = '(424) 545-1818';
+    name.text = widget.name;
+    gender.text = widget.gender;
+    phone.text = widget.phone;
     super.initState();
   }
 
-  TextEditingController firstName = TextEditingController();
-  TextEditingController lastName = TextEditingController();
-  TextEditingController email = TextEditingController();
+  TextEditingController name = TextEditingController();
   TextEditingController gender = TextEditingController();
   TextEditingController phone = TextEditingController();
+  TextEditingController newAddress = TextEditingController();
+  TextEditingController buildingFloor = TextEditingController();
+  TextEditingController roomName = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -51,11 +58,11 @@ class _ProfileAddressState extends State<ProfileAddress> {
         title: Padding(
           padding: const EdgeInsets.only(top: 8.0),
           child: Text(
-            'Profile & Address',
+            'Add New Address',
             style: StylesText.headline20.copyWith(
               fontWeight: FontWeight.bold,
             ),
-          ),
+          ),  
         ),
       ),
     );
@@ -65,35 +72,9 @@ class _ProfileAddressState extends State<ProfileAddress> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Image.asset('assets/images/1.0x/map.png'),
         _distantHeight(6),
-        Center(
-          child: Stack(
-            alignment: AlignmentDirectional.bottomEnd,
-            children: [
-              Image.asset('assets/images/1.0x/Avatar.png'),
-              Positioned(
-                child: Container(
-                  width: 30,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryOrange,
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Icon(
-                    Icons.camera_alt_outlined,
-                    color: AppColors.neutral6,
-                    size: 20,
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-        _distantHeight(8),
         _userInfomation(_height),
-        _distantHeight(8),
-        _address(),
-        _distantHeight(20),
         _save(),
       ],
     );
@@ -102,27 +83,41 @@ class _ProfileAddressState extends State<ProfileAddress> {
   _userInfomation(_height) {
     return Container(
       padding: EdgeInsets.only(left: 24, right: 24),
-      height: _height * 0.26,
+      height: _height * 0.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              _textInput(18, 'First Name', false, firstName),
-              _distantWidth(3),
-              _textInput(13, 'Last Name', false, lastName),
-            ],
-          ),
+          // _distantHeight(6),
+          _address('Contact'),
           _distantHeight(4),
-          _textInput(1, 'Email', false, email),
+          _textInput(1, 'Name', false, name),
           _distantHeight(4),
-          Row(
-            children: [
-              _textInput(2, 'Gender', false, gender),
-              _distantWidth(3),
-              _textInput(5, 'Phone', true, phone),
-            ],
+          Container(
+            height: _height * 0.065,
+            child: Row(
+              children: [
+                _textInput(2, 'Gender', false, gender),
+                _distantWidth(3),
+                _textInput(5, 'Phone', true, phone),
+              ],
+            ),
           ),
+          _distantHeight(8),
+          _address('Address'),
+          _distantHeight(4),
+          _textInput(1, 'New Address', false, newAddress),
+          _distantHeight(4),
+          Container(
+            height: _height * 0.065,
+            child: Row(
+              children: [
+                _textInput(18, 'Building / Floor', false, buildingFloor),
+                _distantWidth(3),
+                _textInput(13, 'Room Name', false, roomName),
+              ],
+            ),
+          ),
+          _distantHeight(15),
         ],
       ),
     );
@@ -163,86 +158,21 @@ class _ProfileAddressState extends State<ProfileAddress> {
     );
   }
 
-  _address() {
+  _address(title) {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.only(left: 24, right: 24),
+          // padding: EdgeInsets.only(left: 24, right: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Address',
+                title,
                 style: StylesText.headline20,
               ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NewAddress(
-                        name: firstName.text + lastName.text,
-                        gender: gender.text,
-                        phone: phone.text,
-                      ),
-                    ),
-                  );
-                },
-                child: Center(
-                  child: Text(
-                    'Add more',
-                    style: StylesText.caption.copyWith(
-                      color: AppColors.primaryOrangeRed,
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
-        _distantHeight(4),
-        _location('222 Cullingworth Mills Yard',
-            '222 Cullingworth Mills Yard, North Bridge, Halifax'),
-        _location('31 Canterbury Road', '31 Canterbury Road, Valley Field'),
-      ],
-    );
-  }
-
-  _location(title, subTitle) {
-    return Column(
-      children: [
-        Divider(height: 0),
-        _distantHeight(2),
-        Container(
-          padding: EdgeInsets.only(left: 24, right: 24),
-          child: Row(
-            children: [
-              Icon(
-                Icons.location_on_outlined,
-                size: 20,
-              ),
-              _distantWidth(4),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: StylesText.bodyText15
-                        .copyWith(color: AppColors.neutral2),
-                  ),
-                  _distantHeight(2),
-                  Text(
-                    subTitle,
-                    style:
-                        StylesText.caption.copyWith(color: AppColors.neutral3),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-        _distantHeight(2),
-        Divider(height: 0),
       ],
     );
   }
