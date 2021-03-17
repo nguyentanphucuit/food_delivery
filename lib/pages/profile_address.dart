@@ -24,6 +24,9 @@ class _ProfileAddressState extends State<ProfileAddress> {
   TextEditingController email = TextEditingController();
   TextEditingController gender = TextEditingController();
   TextEditingController phone = TextEditingController();
+
+  bool isActive = true;
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -90,7 +93,7 @@ class _ProfileAddressState extends State<ProfileAddress> {
           ),
         ),
         _distantHeight(8),
-        _userInfomation(_height),
+        _userInfomation(_height, context),
         _distantHeight(8),
         _address(),
         _distantHeight(20),
@@ -99,7 +102,7 @@ class _ProfileAddressState extends State<ProfileAddress> {
     );
   }
 
-  _userInfomation(_height) {
+  _userInfomation(_height, context) {
     return Container(
       padding: EdgeInsets.only(left: 24, right: 24),
       height: _height * 0.26,
@@ -120,10 +123,50 @@ class _ProfileAddressState extends State<ProfileAddress> {
             children: [
               _textInput(2, 'Gender', false, gender),
               _distantWidth(3),
-              _textInput(5, 'Phone', true, phone),
+              _textInputPhone(5, 'Phone', true, phone),
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  _textInputPhone(
+      int flex, String name, bool isAccuracy, TextEditingController tec) {
+    return Expanded(
+      flex: flex,
+      child: TextField(
+        onTap: () {
+          setState(() {
+            _vertificatePhoneNumber(context);
+          });
+        },
+        style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
+        decoration: InputDecoration(
+          labelText: name,
+          labelStyle: StylesText.bodyText16
+              .copyWith(color: AppColors.neutral3, fontWeight: FontWeight.bold),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          fillColor: Colors.red,
+          suffixIcon: isAccuracy
+              ? Icon(
+                  Icons.check,
+                  color: AppColors.sematicGreen,
+                )
+              : null,
+          focusedBorder: isAccuracy
+              ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: new BorderSide(
+                    color: AppColors.sematicGreen,
+                    width: 1.5,
+                  ),
+                )
+              : null,
+        ),
+        controller: tec,
       ),
     );
   }
@@ -160,6 +203,42 @@ class _ProfileAddressState extends State<ProfileAddress> {
         ),
         controller: tec,
       ),
+    );
+  }
+
+  _textInputVertify(String name, bool isAccuracy, TextEditingController tec) {
+    return TextField(
+      onChanged: (value) {
+        setState(() {
+          value == '' ? isActive = false : isActive = true;
+        });
+      },
+      style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
+      decoration: InputDecoration(
+        labelText: name,
+        labelStyle: StylesText.bodyText16
+            .copyWith(color: AppColors.neutral3, fontWeight: FontWeight.bold),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        fillColor: Colors.red,
+        suffixIcon: isAccuracy
+            ? Icon(
+                Icons.check,
+                color: AppColors.sematicGreen,
+              )
+            : null,
+        focusedBorder: isAccuracy
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: new BorderSide(
+                  color: AppColors.sematicGreen,
+                  width: 1.5,
+                ),
+              )
+            : null,
+      ),
+      controller: tec,
     );
   }
 
@@ -205,6 +284,58 @@ class _ProfileAddressState extends State<ProfileAddress> {
             '222 Cullingworth Mills Yard, North Bridge, Halifax'),
         _location('31 Canterbury Road', '31 Canterbury Road, Valley Field'),
       ],
+    );
+  }
+
+  _vertificatePhoneNumber(context) {
+    showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.0),
+          ),
+        ),
+        title: Container(
+          height: 190,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              _distantHeight(4),
+              Text(
+                "Phone Number Verification",
+                style:
+                    StylesText.headline16.copyWith(fontWeight: FontWeight.bold),
+              ),
+              _distantHeight(6),
+              Container(
+                // padding: EdgeInsets.only(top: 16),
+                width: 208,
+                height: 50,
+                child: _textInputVertify('Phone', false, phone),
+              ),
+              _distantHeight(6),
+              InkWell(
+                child: Text(
+                  'Vertify',
+                  style: StylesText.bodyText16.copyWith(
+                    color: isActive
+                        ? AppColors.primaryOrangeRed
+                        : AppColors.neutral4,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: !isActive
+                    ? null
+                    : () {
+                        Navigator.of(context).pop();
+                      },
+              ),
+              _distantHeight(8),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
