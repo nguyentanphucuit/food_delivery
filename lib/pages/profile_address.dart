@@ -24,7 +24,9 @@ class _ProfileAddressState extends State<ProfileAddress> {
   TextEditingController email = TextEditingController();
   TextEditingController gender = TextEditingController();
   TextEditingController phone = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  final TextEditingController _textEditingController = TextEditingController();
   bool isActive = true;
 
   @override
@@ -62,6 +64,89 @@ class _ProfileAddressState extends State<ProfileAddress> {
         ),
       ),
     );
+  }
+
+  Future<void> showInformationDialog(BuildContext context) async {
+    return await showDialog(
+        context: context,
+        builder: (context) {
+          return StatefulBuilder(builder: (context, setState) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(16.0),
+                ),
+              ),
+              content: Form(
+                key: _formKey,
+                child: Container(
+                  height: 190,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      _distantHeight(4),
+                      Text(
+                        "Phone Number Verification",
+                        style: StylesText.headline16
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      _distantHeight(6),
+                      Container(
+                        // padding: EdgeInsets.only(top: 16),
+                        width: 208,
+                        height: 80,
+                        child: TextFormField(
+                          validator: (value) {
+                            return value.isNotEmpty
+                                ? null
+                                : "Enter phone number";
+                          },
+                          onChanged: (value) {
+                            value == '' ? isActive = false : isActive = true;
+                          },
+                          style: StylesText.bodyText16
+                              .copyWith(fontWeight: FontWeight.bold),
+                          decoration: InputDecoration(
+                            labelText: 'Phone',
+                            labelStyle: StylesText.bodyText16.copyWith(
+                                color: AppColors.neutral3,
+                                fontWeight: FontWeight.bold),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            fillColor: Colors.red,
+                          ),
+                          controller: phone,
+                        ),
+                      ),
+                      _distantHeight(6),
+                      InkWell(
+                        child: Text(
+                          'Vertify',
+                          style: StylesText.bodyText16.copyWith(
+                            color: isActive
+                                ? AppColors.primaryOrangeRed
+                                : AppColors.neutral4,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onTap: !isActive
+                            ? null
+                            : () {
+                                if (_formKey.currentState.validate()) {
+                                  // Do something like updating SharedPreferences or User Settings etc.
+                                  Navigator.of(context).pop();
+                                }
+                              },
+                      ),
+                      // _distantHeight(8),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          });
+        });
   }
 
   _buildBody(_height) {
@@ -136,10 +221,8 @@ class _ProfileAddressState extends State<ProfileAddress> {
     return Expanded(
       flex: flex,
       child: TextField(
-        onTap: () {
-          setState(() {
-            _vertificatePhoneNumber(context);
-          });
+        onTap: () async {
+          await showInformationDialog(context);
         },
         style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
         decoration: InputDecoration(
@@ -287,7 +370,7 @@ class _ProfileAddressState extends State<ProfileAddress> {
     );
   }
 
-  _vertificatePhoneNumber(context) {
+  _verificatePhoneNumber(context) {
     showDialog(
       context: context,
       builder: (_) => new AlertDialog(
