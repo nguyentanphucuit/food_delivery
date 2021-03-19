@@ -66,7 +66,7 @@ class _ProfileAddressState extends State<ProfileAddress> {
     );
   }
 
-  Future<void> showInformationDialog(BuildContext context) async {
+  Future<void> numberPhoneVerification(BuildContext context) async {
     return await showDialog(
         context: context,
         builder: (context) {
@@ -222,7 +222,7 @@ class _ProfileAddressState extends State<ProfileAddress> {
       flex: flex,
       child: TextField(
         onTap: () async {
-          await showInformationDialog(context);
+          await numberPhoneVerification(context);
         },
         style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
         decoration: InputDecoration(
@@ -289,42 +289,6 @@ class _ProfileAddressState extends State<ProfileAddress> {
     );
   }
 
-  _textInputVertify(String name, bool isAccuracy, TextEditingController tec) {
-    return TextField(
-      onChanged: (value) {
-        setState(() {
-          value == '' ? isActive = false : isActive = true;
-        });
-      },
-      style: StylesText.bodyText16.copyWith(fontWeight: FontWeight.bold),
-      decoration: InputDecoration(
-        labelText: name,
-        labelStyle: StylesText.bodyText16
-            .copyWith(color: AppColors.neutral3, fontWeight: FontWeight.bold),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        fillColor: Colors.red,
-        suffixIcon: isAccuracy
-            ? Icon(
-                Icons.check,
-                color: AppColors.sematicGreen,
-              )
-            : null,
-        focusedBorder: isAccuracy
-            ? OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: new BorderSide(
-                  color: AppColors.sematicGreen,
-                  width: 1.5,
-                ),
-              )
-            : null,
-      ),
-      controller: tec,
-    );
-  }
-
   _address() {
     return Column(
       children: [
@@ -367,58 +331,6 @@ class _ProfileAddressState extends State<ProfileAddress> {
             '222 Cullingworth Mills Yard, North Bridge, Halifax'),
         _location('31 Canterbury Road', '31 Canterbury Road, Valley Field'),
       ],
-    );
-  }
-
-  _verificatePhoneNumber(context) {
-    showDialog(
-      context: context,
-      builder: (_) => new AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(16.0),
-          ),
-        ),
-        title: Container(
-          height: 190,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              _distantHeight(4),
-              Text(
-                "Phone Number Verification",
-                style:
-                    StylesText.headline16.copyWith(fontWeight: FontWeight.bold),
-              ),
-              _distantHeight(6),
-              Container(
-                // padding: EdgeInsets.only(top: 16),
-                width: 208,
-                height: 50,
-                child: _textInputVertify('Phone', false, phone),
-              ),
-              _distantHeight(6),
-              InkWell(
-                child: Text(
-                  'Vertify',
-                  style: StylesText.bodyText16.copyWith(
-                    color: isActive
-                        ? AppColors.primaryOrangeRed
-                        : AppColors.neutral4,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: !isActive
-                    ? null
-                    : () {
-                        Navigator.of(context).pop();
-                      },
-              ),
-              _distantHeight(8),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
