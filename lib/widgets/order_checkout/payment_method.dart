@@ -23,10 +23,10 @@ class PaymentMethod extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildElevatedButton(true, 'Cash', 'assets/images/1.0x/cash.png'),
-              _buildElevatedButton(
+              _paymentMethod(true, 'Cash', 'assets/images/1.0x/cash.png'),
+              _paymentMethod(
                   false, 'Card', 'assets/images/1.0x/card.png'),
-              _buildElevatedButton(false, '', 'assets/images/1.0x/3dot.png'),
+              _paymentMethod(false, '', 'assets/images/1.0x/3dot.png'),
             ],
           ),
           _distantHeight(4),
@@ -54,12 +54,13 @@ class PaymentMethod extends StatelessWidget {
     );
   }
 
-  _buildElevatedButton(bool isChoose, String text, String image) {
+  _paymentMethod(bool isChoose, String text, String image) {
     return Container(
       width: 98,
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           primary: isChoose ? AppColors.primarySeashell : AppColors.neutral5,
         ),
         onPressed: () {},
