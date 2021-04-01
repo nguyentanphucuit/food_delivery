@@ -30,6 +30,7 @@ import 'package:food_delivery/providers/list_special_delivery.dart';
 import 'package:food_delivery/providers/list_traditional.dart';
 import 'package:food_delivery/widgets/component/voucher.dart';
 import 'package:food_delivery/widgets/food_option.dart';
+import 'package:food_delivery/widgets/home_main/home/home.dart';
 import 'package:food_delivery/widgets/home_main/order/order.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
@@ -90,7 +91,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: Order(),
+        home: HomePage(),
       ),
     );
   }
